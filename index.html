@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organized Life</title>
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            background-color: #d9b38c; /* Beige oscuro */
+            color: #000;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        header {
+            padding: 20px;
+            border-bottom: 2px solid #8b4513; /* Borde marrón */
+            background-color: #d9b38c;
+        }
+        .logo {
+            font-size: 36px;
+            font-style: italic;
+            color: #8b4513; /* Marrón */
+            margin: 0 auto 20px;
+        }
+        nav {
+            margin: 20px 0;
+        }
+        nav a {
+            color: #8b4513;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 20px;
+            border-bottom: 2px solid transparent;
+        }
+        nav a:hover {
+            border-bottom: 2px solid #8b4513;
+        }
+        .content {
+            padding: 20px;
+        }
+        footer {
+            padding: 10px;
+            border-top: 2px solid #8b4513;
+            margin-top: 20px;
+        }
+        .slogan {
+            font-style: italic;
+            font-size: 24px;
+            color: #8b4513;
+            margin-top: 10px;
+            border: 2px solid #fff;
+            padding: 10px;
+            display: inline-block;
+            background-color: #d9b38c;
+        }
+        .product {
+            background-color: #fff;
+            border: 2px solid #8b4513;
+            padding: 10px;
+            border-radius: 10px;
+            width: 300px;
+            text-align: center;
+            margin: 0 auto;
+        }
+        .product img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+        .carousel {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        .carousel button {
+            background-color: #8b4513;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .description {
+            background-color: #fff;
+            color: #000;
+            padding: 20px;
+            border-radius: 10px;
+            border: 2px solid #8b4513;
+            margin-top: 20px;
+            width: 80%;
+            margin: 0 auto 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">Organized Life</div>
+        <p class="slogan">Orden En Tu Hogar</p>
+        <nav>
+            <a href="#inicio">Inicio</a>
+            <a href="#producto">Producto</a>
+            <a href="#contacto">WhatsApp</a>
+        </nav>
+    </header>
+
+    <div class="content">
+        <!-- Descripción de la Empresa -->
+        <section id="inicio">
+            <p class="description">
+                En Organized Life, ofrecemos una variedad de elegantes organizadores diseñados específicamente para maquillaje, skincare, pinta uñas, labiales y mucho más. Nuestros productos combinan funcionalidad con estilo.
+            </p>
+        </section>
+
+        <!-- Producto con Descripción Detallada -->
+        <section id="producto">
+            <h2>Organizador de Acrílico</h2>
+            <div class="product">
+                <div class="carousel">
+                    <button onclick="changeImage(-1)">&#10094;</button>
+                    <img id="product-image" src="https://via.placeholder.com/200x250.png?text=Organizador+1" alt="Organizador">
+                    <button onclick="changeImage(1)">&#10095;</button>
+                </div>
+                <p class="description">
+                    <strong>Descripción:</strong> Este organizador es perfecto para mantener tus productos de belleza ordenados y a la vista. Con compartimentos variados para almacenar desde labiales y brochas hasta marcadores y artículos escolares. Su diseño claro permite localizar fácilmente lo que necesitas, y sus comparticiones brindan espacio extra para artículos más pequeños. Ideal para cualquier tocador, baño o escritorio, este organizador no solo es funcional, sino que también aporta un toque elegante y moderno a tu espacio.<br>
+                    <strong>Medidas:</strong> 27 cm de ancho x 17 cm de profundidad x 6 cm de altura.
+                </p>
+            </div>
+        </section>
+
+        <!-- Contacto -->
+        <section id="contacto">
+            <p>Contáctanos por <a href="https://wa.me/5950981723557" target="_blank">WhatsApp</a> para más información.</p>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Organized Life - Todos los derechos reservados</p>
+    </footer>
+
+    <script>
+        let currentImage = 0;
+        const images = [
+            "https://via.placeholder.com/200x250.png?text=Organizador+1",
+            "https://via.placeholder.com/200x250.png?text=Organizador+2",
+            "https://via.placeholder.com/200x250.png?text=Organizador+3"
+        ];
+
+        function changeImage(direction) {
+            currentImage = (currentImage + direction + images.length) % images.length;
+            document.getElementById("product-image").src = images[currentImage];
+        }
+    </script>
+</body>
+</html>
